@@ -8,7 +8,7 @@ pipeline {
     stage('Download Dependencies') {
       steps {
         sh '''
-          apt update && apt install npm -y && npm install
+          npm install
         '''
       }
     }
