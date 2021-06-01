@@ -13,6 +13,8 @@ pipeline {
       }
     }
 
+    tools {nodejs "nodejs"}
+
     stage('Prepare Artifacts') {
       steps {
         sh '''
