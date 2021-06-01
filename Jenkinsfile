@@ -3,10 +3,18 @@ pipeline {
 
   stages {
 
+    stage('Download Dependencies') {
+      steps {
+        sh '''
+          npm install
+        '''
+      }
+    }
+
     stage('Prepare Artifacts') {
       steps {
         sh '''
-          zip ../todo.zip *
+          zip -r todo.zip node_modules server.js
         '''
       }
     }
