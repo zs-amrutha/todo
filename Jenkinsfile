@@ -1,4 +1,4 @@
-@library('todoapp') 
+@Library('todoapp') 
 
 pipeline {
   agent {
