@@ -1,36 +1,9 @@
 @Library('todo') _
 
-pipeline {
-  agent {
-    label 'NODEJS'
-  }
-
-  stages {
-
-    stage('Download Dependencies') {
-      steps {
-        sh '''
-          npm install
-        '''
-      }
-    }
-
-    stage('Prepare Artifacts') {
-      steps {
-        sh '''
-          zip -r todo.zip node_modules server.js
-        '''
-      }
-    }
-
-    stage('Upload Artifact') {
-      steps {
-        script {
-          nexus
-        }
-
-      }
-    }
-  }
-
-}
+todo (
+  COMPONENT             : 'todo',
+  PROJECT_NAME          : "TODO",
+  SLAVE_LABEL           : "NODEJS",
+  SKIP_NEXUS_UPLOAD     : false,
+  APP_TYPE              : "NODEJS"
+)
