@@ -1,0 +1,12 @@
+[Unit]
+Description = todo Service
+[Service]
+User=todoapp
+Environment=REDIS_PORT=REDISPORT
+Environment=REDIS_HOST=REDIS_ENDPOINT
+ExecStart=/bin/node /home/todoapp/todo/server.js
+Restart=on-failure
+SyslogIdentifier=todo
+
+[Install]
+WantedBy=multi-user.target
