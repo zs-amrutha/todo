@@ -4,6 +4,7 @@ Description = todo Service
 User=todoapp
 Environment=REDIS_PORT=REDISPORT
 Environment=REDIS_HOST=REDIS_ENDPOINT
+Environment=TODO_API_PORT=8080
 ExecStart=/bin/node /home/todoapp/todo/server.js
 Restart=on-failure
 SyslogIdentifier=todo
