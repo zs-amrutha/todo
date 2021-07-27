@@ -18,16 +18,13 @@ Lets clone the code from github repository.
 # cd todo/
 # npm install
 ```
-NOTE: Configure below environment variable
 
-```
-# export REDIS_PORT=6379
-# export REDIS_HOST=172.31.22.12
-```
+
 Finally start the Todo Module once to effect the changes by the below cammand.
 
 ```
-# npm start
+# mv /home/todoapp/todo/systemd.service /etc/systemd/system/todo.service
+# systemctl daemon-reload && systemctl start todo && systemctl enable todo 
 ```
 ;) :) ;'( :'( ;)
 # RELEASE 0.0.6 -DATE - 03-06-2021
